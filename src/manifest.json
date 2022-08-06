@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Lumini AI extension",
+  "description": "Lumini AI extension to copy 2nd highest stock information",
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.styles.css"
+      ],
+      "matches": []
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ]
+}
